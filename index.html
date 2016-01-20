@@ -20,8 +20,10 @@
 
 			var canvas  = document.getElementById("test");
             var ctx     = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.beginPath();
-            ctx.moveTo(0, 0);
+            var x=0;
+            ctx.moveTo(0, eval(value));
 
 			for(x=0; x<=100; x++) {
 				result += eval(value);
