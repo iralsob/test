@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		div {
+			width: 400px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="value">
+	<input type="submit" id="submit" onclick="main()">
+	<div id="output"></div>
+	<canvas id='test' height='1320' width='580'>Текст показывается, если элемент не поддерживается</canvas>
+	<script type="text/javascript">
+		function main() {
+			var value = document.getElementById('value').value;
+			var output = document.getElementById('output');
+			var result = '';
+
+			var canvas  = document.getElementById("test");
+            var ctx     = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+
+			for(x=0; x<=100; x++) {
+				result += eval(value);
+				if (x != 100) {
+					result += ', ';
+				}
+				ctx.lineTo(x, eval(value));
+			}
+
+			output.innerHTML = result;
+			ctx.stroke();
+		}
+	</script>
+</body>
+</html>
